@@ -1,0 +1,91 @@
+D .
+D comp
+P 9401CC40 blank.png
+P 316AD948 btn_close.png
+P 5B258D17 button.png
+P 3C493DD4 check_circle.png
+P 98E54F0D checkbox.png
+P 6B7AB858 clip_num.png
+P F7B6B7D7 clip_selectBox.png
+P 63A22FAC clip_tree_arrow.png
+P D749C312 clip_tree_folder.png
+P 704C5D70 combobox.png
+P D566AE8B fontClip.png
+P 38AB8F3F fontClip_num.png
+P 6EF336AE hscroll$bar.png
+P 7FF47AC5 hscroll$down.png
+P 3D7B147A hscroll$up.png
+P 750BD445 hscroll.png
+P 9A5EF899 hslider$bar.png
+P 9CED7132 hslider.png
+P BA2A0579 html.png
+P 8236CD48 image.png
+P 4ACB7AEF img_bg.png
+P FCD04607 img_bg2.png
+P 23FB4D29 img_bg3.png
+P 5FD17798 img_bg4.png
+P 2BE22124 img_bg5.png
+P BA28BD65 img_blank.png
+P BA2A0579 label.png
+P 5EDC128C linkbutton.png
+P B017E53E progress$bar.png
+P C05839CD progress.png
+P 3C493DD4 radio.png
+P 3C493DD4 radiogroup.png
+P 5BA25C15 tab.png
+P A3D7A036 textarea.png
+P A3D7A036 textinput.png
+P 2DCE1DF9 vscroll$bar.png
+P 6FE7EA34 vscroll$down.png
+P 0587871F vscroll$up.png
+P 5FD17798 vscroll.png
+P DDDDFB9E vslider$bar.png
+P 01BAE7F5 vslider.png
+D game
+P B3BCA4C1 ansBg.png
+P F8C49A07 avstar.png
+P 782AD88C avstarBg.png
+P 401F1716 avstarMask.png
+P 428EEA0C btn.png
+P 713F3B07 choiceBg.png
+P 148E545F choiceRight.png
+P 1716C4C0 choiceWrong.png
+P 43B9FA48 countBg.png
+R DC906DC7 gameBg.png
+P 8E3BEFD1 iconBook.png
+P A3AFD076 optionBg.png
+P 36632512 optionRight.png
+P B3BCA4C1 optionSeletedBg.png
+P B415C33A optionWrong.png
+P FC33C863 textBg.png
+R 7A7A8372 titleBg.png
+P BD678E8A titleBorder.png
+D home
+P E56040F3 btn_start.png
+R F8D3FB8B homeBg.png
+P 92376645 icon.png
+P E37EA72F lblText.png
+P DF335311 shadow.png
+P 6170214D showBg.png
+P D4FD14B3 textCircle.png
+P FF23FFCE textIcon.png
+D local
+D rank
+P 654FEADE avstar.png
+R EE6A3736 center-empty-mask.jpg
+P 34443C08 close.png
+R 1166EF31 rankBg.png
+R 01DD66EE rankTitle.jpg
+P 7E6D6B87 textBg.png
+D result
+P 0E1BEB2A avstarBg.png
+R 6632B4C3 bg.png
+P FA1F9A79 btn.png
+P E6C0F3B4 title.png
+P A7FE5F0B titleBg.png
+D sound
+R 1F4CF6EB right.mp3
+R 886AF1E2 wrong.mp3
+D local/common
+R 654FEADE avstar.png
+R C809BDD7 loading.png
