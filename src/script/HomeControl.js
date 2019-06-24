@@ -27,7 +27,7 @@ export default class HomeControl extends PaoYa.Component {
                 break;
             case 'actIcon':
                 //console.log("展开排行榜");
-               
+                this.navigator.push('RankView');
                 break;
         }
     }
