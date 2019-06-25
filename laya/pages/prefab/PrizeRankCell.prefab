@@ -4,7 +4,7 @@
     "selectedBox":1,
     "searchKey":"View",
     "referenceLines":null,
-    "props":{"y":0,"x":0,"width":350,"presetID":1,"preset":"laya/pages/prefab/PrizeRankCell.prefab","isPresetRoot":true,"height":60,"cacheAs":"normal"},
+    "props":{"y":0,"x":0,"width":350,"runtime":"script/RankService/RankPrizeCell.js","presetID":1,"preset":"laya/pages/prefab/PrizeRankCell.prefab","isPresetRoot":true,"height":60,"cacheAs":"normal"},
     "nodeParent":-1,
     "maxID":18,
     "label":"View(PrizeRankCell)",

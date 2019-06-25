@@ -1,12 +1,12 @@
 {
     "x":0,
     "type":"Dialog",
-    "selectedBox":12,
-    "selecteID":4,
+    "selectedBox":2,
+    "selecteID":64,
     "searchKey":"Dialog",
     "props":{"width":596,"sceneColor":"#000000","runtime":"script/RankService/RankView.js","height":802},
     "nodeParent":-1,
-    "maxID":61,
+    "maxID":65,
     "label":"Dialog",
     "isOpen":true,
     "isDirectory":true,
@@ -72,19 +72,32 @@
         },
         {
             "x":15,
+            "type":"Image",
+            "searchKey":"Image,ImgIntroduct",
+            "props":{"y":102,"x":78,"visible":false,"var":"ImgIntroduct","skin":"rank/introduct.png"},
+            "nodeParent":2,
+            "label":"ImgIntroduct",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":64,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
             "type":"Box",
             "searchKey":"Box,boxUserInfo",
-            "props":{"y":84,"x":162,"var":"boxUserInfo"},
+            "props":{"y":85,"x":162,"var":"boxUserInfo"},
             "nodeParent":2,
             "label":"boxUserInfo",
-            "isOpen":true,
+            "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":37,
             "child":[
                 {
-                    "x":30,
                     "type":"Sprite",
                     "searchKey":"Sprite,lblIcon",
                     "props":{"x":98,"width":76,"var":"lblIcon","texture":"local/common/avstar.png","height":76},
@@ -98,7 +111,19 @@
                         ]
                 },
                 {
-                    "x":30,
+                    "type":"Sprite",
+                    "searchKey":"Sprite",
+                    "props":{"y":-2.5,"x":96,"texture":"rank/center-empty-mask.jpg"},
+                    "nodeParent":37,
+                    "label":"Sprite",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":61,
+                    "child":[
+                        ]
+                },
+                {
                     "type":"Sprite",
                     "searchKey":"Sprite",
                     "props":{"y":86,"texture":"rank/textBg.png"},
@@ -112,7 +137,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Label",
                     "searchKey":"Label,lblName",
                     "props":{"y":90,"x":6,"width":258,"var":"lblName","text":"白开水","height":24,"fontSize":24,"color":"#ffffff","bold":true,"align":"center"},
@@ -133,14 +157,13 @@
             "props":{"y":280,"x":123,"width":350,"var":"boxRankList","height":451},
             "nodeParent":2,
             "label":"boxRankList",
-            "isOpen":true,
+            "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":48,
             "child":[
                 {
-                    "x":30,
                     "type":"Box",
                     "searchKey":"Box",
                     "props":{"x":1},
@@ -153,7 +176,6 @@
                     "compId":12,
                     "child":[
                         {
-                            "x":45,
                             "type":"Label",
                             "searchKey":"Label",
                             "props":{"text":"排行","fontSize":20,"color":"#575d69"},
@@ -168,7 +190,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Label",
                             "searchKey":"Label",
                             "props":{"x":104,"text":"头像","fontSize":20,"color":"#575d69"},
@@ -183,7 +204,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Label",
                             "searchKey":"Label",
                             "props":{"y":0,"x":196,"text":"昵称","fontSize":20,"color":"#575d69"},
@@ -198,7 +218,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Label",
                             "searchKey":"Label",
                             "props":{"y":0,"x":299,"text":"成绩","fontSize":20,"color":"#575d69"},
@@ -214,7 +233,6 @@
                         }]
                 },
                 {
-                    "x":30,
                     "type":"List",
                     "searchKey":"List,listView",
                     "props":{"y":30,"x":0,"width":350,"var":"listView","repeatY":7,"repeatX":1,"height":422},
@@ -332,50 +350,34 @@
                                 }]
                         }]
                 }],
-            "$HIDDEN":false
+            "$HIDDEN":true
         },
         {
             "x":15,
-            "type":"HBox",
-            "searchKey":"HBox,boxRankInfo",
-            "props":{"y":214,"var":"boxRankInfo","centerX":0},
+            "type":"VBox",
+            "searchKey":"VBox,boxRankInfo",
+            "props":{"y":214,"var":"boxRankInfo","space":8,"centerX":0},
             "nodeParent":2,
             "label":"boxRankInfo",
-            "isOpen":true,
+            "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
-            "compId":40,
+            "compId":63,
             "child":[
                 {
-                    "x":30,
-                    "type":"Label",
-                    "searchKey":"Label",
-                    "props":{"y":29,"x":30.00537109375,"text":"（只显示前100名）","fontSize":16,"color":"#344052"},
-                    "nodeParent":40,
-                    "label":"Label",
-                    "isDirectory":false,
-                    "isAniNode":true,
-                    "hasChild":false,
-                    "compId":41,
-                    "child":[
-                        ]
-                },
-                {
-                    "x":30,
                     "type":"HBox",
                     "searchKey":"HBox",
-                    "props":{"y":0,"x":0,"space":4},
-                    "nodeParent":40,
+                    "props":{"x":-221,"space":4,"centerX":0},
+                    "nodeParent":63,
                     "label":"HBox",
-                    "isOpen":true,
+                    "isOpen":false,
                     "isDirectory":true,
                     "isAniNode":true,
                     "hasChild":true,
                     "compId":60,
                     "child":[
                         {
-                            "x":45,
                             "type":"Label",
                             "searchKey":"Label",
                             "props":{"text":"您的当前排名为","fontSize":22,"color":"#344052"},
@@ -389,7 +391,6 @@
                                 ]
                         },
                         {
-                            "x":45,
                             "type":"Label",
                             "searchKey":"Label,lblRankPos",
                             "props":{"var":"lblRankPos","text":"200","fontSize":22,"color":"#344052"},
@@ -402,8 +403,20 @@
                             "child":[
                                 ]
                         }]
-                }],
-            "$HIDDEN":false
+                },
+                {
+                    "type":"Label",
+                    "searchKey":"Label",
+                    "props":{"y":29,"x":-221,"text":"（只显示前100名）","fontSize":16,"color":"#344052","centerX":0},
+                    "nodeParent":63,
+                    "label":"Label",
+                    "isDirectory":false,
+                    "isAniNode":true,
+                    "hasChild":false,
+                    "compId":41,
+                    "child":[
+                        ]
+                }]
         },
         {
             "x":15,
@@ -412,14 +425,13 @@
             "props":{"y":214,"var":"boxPrizeInfo","space":5,"centerX":0},
             "nodeParent":2,
             "label":"boxPrizeInfo",
-            "isOpen":true,
+            "isOpen":false,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":45,
             "child":[
                 {
-                    "x":30,
                     "type":"Label",
                     "searchKey":"Label",
                     "props":{"text":"您共获得","fontSize":22,"color":"#344052"},
@@ -433,7 +445,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Label",
                     "searchKey":"Label,lblPrizeNum",
                     "props":{"var":"lblPrizeNum","text":"10","fontSize":22,"color":"#344052"},
@@ -447,7 +458,6 @@
                         ]
                 },
                 {
-                    "x":30,
                     "type":"Label",
                     "searchKey":"Label",
                     "props":{"y":0,"text":"份奖品","fontSize":22,"color":"#344052"},
@@ -624,7 +634,7 @@
                                 ]
                         }]
                 }],
-            "$HIDDEN":true
+            "$HIDDEN":false
         },
         {
             "x":15,
