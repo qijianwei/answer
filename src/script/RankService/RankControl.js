@@ -5,8 +5,12 @@ export default class RankControl extends PaoYa.Component {
     onAwake() {
         super.onAwake()
         this.owner.reloadData([])
-        this.requestRankList()
-        this.typeText=['','1等奖','2等奖','3等奖','4等奖','5等奖']
+        if(this.owner.params.type){
+            this.requestPrizeList();
+        }else{
+            this.requestRankList()
+        }  
+        this.typeText=['','500元现金','茶艺体验课1节','手绘团扇体验课1节','七修定制合香香囊1个','感谢参与']
     }
     onClick(e) {
         switch (e.target.name) {

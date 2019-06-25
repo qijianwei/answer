@@ -29,7 +29,7 @@ export default class ResultControl extends PaoYa.Component {
         // PaoYa.navigator.push('GameScene');
         break;
       case "btnPrize":
-        console.log("抽奖完善");
+        this.navigator.push('RouletteView');
         //console.log("展开排行榜");
         break;
       case "btnShare":

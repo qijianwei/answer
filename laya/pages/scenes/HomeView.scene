@@ -2,10 +2,11 @@
     "x":0,
     "type":"Scene",
     "selectedBox":2,
+    "selecteID":13,
     "searchKey":"Scene",
     "props":{"width":640,"sceneColor":"#000000","height":1136},
     "nodeParent":-1,
-    "maxID":13,
+    "maxID":14,
     "label":"Scene",
     "isOpen":true,
     "isDirectory":true,
@@ -139,6 +140,20 @@
             "isAniNode":true,
             "hasChild":false,
             "compId":12,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Sprite",
+            "searchKey":"Sprite",
+            "props":{"y":602,"x":190.5,"texture":"home/qrcode_for_gh_2d8225c4a867_258.jpg"},
+            "nodeParent":2,
+            "label":"Sprite",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":13,
             "child":[
                 ]
         }],

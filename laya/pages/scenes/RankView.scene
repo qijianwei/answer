@@ -1,8 +1,8 @@
 {
     "x":0,
     "type":"Dialog",
-    "selectedBox":55,
-    "selecteID":56,
+    "selectedBox":45,
+    "selecteID":43,
     "searchKey":"Dialog",
     "props":{"width":596,"sceneColor":"#000000","runtime":"script/RankService/RankView.js","height":802},
     "nodeParent":-1,
@@ -416,7 +416,8 @@
                     "compId":41,
                     "child":[
                         ]
-                }]
+                }],
+            "$HIDDEN":true
         },
         {
             "x":15,
@@ -425,13 +426,14 @@
             "props":{"y":214,"var":"boxPrizeInfo","space":5,"centerX":0},
             "nodeParent":2,
             "label":"boxPrizeInfo",
-            "isOpen":false,
+            "isOpen":true,
             "isDirectory":true,
             "isAniNode":true,
             "hasChild":true,
             "compId":45,
             "child":[
                 {
+                    "x":30,
                     "type":"Label",
                     "searchKey":"Label",
                     "props":{"text":"您共获得","fontSize":22,"color":"#344052"},
@@ -445,6 +447,7 @@
                         ]
                 },
                 {
+                    "x":30,
                     "type":"Label",
                     "searchKey":"Label,lblPrizeNum",
                     "props":{"var":"lblPrizeNum","text":"10","fontSize":22,"color":"#344052"},
@@ -458,6 +461,7 @@
                         ]
                 },
                 {
+                    "x":30,
                     "type":"Label",
                     "searchKey":"Label",
                     "props":{"y":0,"text":"份奖品","fontSize":22,"color":"#344052"},
@@ -470,7 +474,7 @@
                     "child":[
                         ]
                 }],
-            "$HIDDEN":true
+            "$HIDDEN":false
         },
         {
             "x":15,
@@ -635,7 +639,7 @@
                                 ]
                         }]
                 }],
-            "$HIDDEN":false
+            "$HIDDEN":true
         },
         {
             "x":15,

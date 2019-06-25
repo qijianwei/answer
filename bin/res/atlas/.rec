@@ -23,6 +23,7 @@ P E56040F3 btn_start.png
 R F8D3FB8B homeBg.png
 P 92376645 icon.png
 P E37EA72F lblText.png
+P E9A5B461 qrcode_for_gh_2d8225c4a867_258.jpg
 P DF335311 shadow.png
 P 6170214D showBg.png
 P D4FD14B3 textCircle.png
@@ -50,9 +51,6 @@ R B8B9D4A7 circle2.png
 P 4622B50B icon.png
 P 0FEF0DFC table.png
 R 57C10663 tableBg.png
-D sound
-R 1F4CF6EB right.mp3
-R 886AF1E2 wrong.mp3
 D local/common
 R 654FEADE avstar.png
 R C809BDD7 loading.png

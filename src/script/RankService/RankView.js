@@ -3,7 +3,12 @@ export default class RankView extends PaoYa.Dialog {
         this.configListView()
         this.initUserInfo();
         this.configPrizeListView();
-        this.changeBtnHandler(0);
+        if(this.params.type){
+            this.changeBtnHandler(2)
+        }else{
+            this.changeBtnHandler(0);
+        }
+        
     }
     initUserInfo(){
         this.lblIcon.texture=PaoYa.Utils.makeIcon(PaoYa.DataCenter.loginData.icon_big);
@@ -35,6 +40,7 @@ export default class RankView extends PaoYa.Dialog {
         this.prizeList.repeatY = list.length > 5 ? 5:list.length
         this.prizeList.array = list
         this.prizeList.refresh()
+        this.lblPrizeNum.text=list.length;
     }
     //index :0 排行榜 2奖品榜 3 比赛说明
     changeBtnHandler(index){
