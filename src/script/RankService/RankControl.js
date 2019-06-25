@@ -20,6 +20,9 @@ export default class RankControl extends PaoYa.Component {
                 this.owner.changeBtnHandler(2)
                 this.requestPrizeList();
                 break
+            case 'btnLook':
+            window.location.href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzU1Njk1MTI2NQ==#wechat_redirect"
+              break;
         }
     }
     requestRankList() {

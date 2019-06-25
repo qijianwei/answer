@@ -9,6 +9,7 @@ import LoadingControl from "./script/Loading/LoadingControl"
 import RankView from "./script/RankService/RankView"
 import RankPrizeCell from "./script/RankService/RankPrizeCell"
 import RankControl from "./script/RankService/RankControl"
+import RouletteControl from "./script/RouletteControl"
 import Option from "./script/prefab/Option"
 import Word from "./script/prefab/Word"
 
@@ -26,6 +27,7 @@ export default class GameConfig {
 		reg("script/RankService/RankView.js",RankView);
 		reg("script/RankService/RankPrizeCell.js",RankPrizeCell);
 		reg("script/RankService/RankControl.js",RankControl);
+		reg("script/RouletteControl.js",RouletteControl);
 		reg("script/prefab/Option.js",Option);
 		reg("script/prefab/Word.js",Word);
     }
@@ -36,7 +38,7 @@ GameConfig.scaleMode ="fixedwidth";
 GameConfig.screenMode = "none";
 GameConfig.alignV = "middle";
 GameConfig.alignH = "center";
-GameConfig.startScene = "scenes/GameResultView.scene";
+GameConfig.startScene = "scenes/RouletteView.scene";
 GameConfig.sceneRoot = "";
 GameConfig.debug = false;
 GameConfig.stat = false;

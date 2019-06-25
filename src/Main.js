@@ -3,7 +3,8 @@ import ui from "./ui/layaMaxUI";
 class Main {
 	constructor() {
 	  /*  console.log('打印paoya信息:');
-	   console.log(PaoYa.RequestConfig.token) */
+		 console.log(PaoYa.RequestConfig.token) */
+		
 		//根据IDE设置初始化引擎		
 		if (window["Laya3D"]) Laya3D.init(GameConfig.width, GameConfig.height);
 		else Laya.init(GameConfig.width, GameConfig.height, Laya["WebGL"]);
@@ -26,61 +27,7 @@ class Main {
 		//激活资源版本控制，version.json由IDE发布功能自动生成，如果没有也不影响后续流程
 		Laya.ResourceVersion.enable("version.json", Laya.Handler.create(this, this.onVersionLoaded), Laya.ResourceVersion.FILENAME_VERSION);
 	}
-	adapterJS() {
-		wx.config({
-			debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-			appId: 'wx9adc82e8be26b1db', // 必填，公众号的唯一标识
-			timestamp: PaoYa.DataCenter.loginData.timestamp, // 必填，生成签名的时间戳
-			nonceStr: PaoYa.DataCenter.loginData.nonceStr, // 必填，生成签名的随机串
-			signature: PaoYa.DataCenter.loginData.signature,// 必填，签名
-			jsApiList: [
-				'onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ','updateAppMessageShareData',
-				'updateTimelineShareData'
-			] // 必填，需要使用的JS接口列表
-		});
 	
-		wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
-		/* 	wx.updateAppMessageShareData({ 
-				title: '分享666', // 分享标题
-				desc: '牛逼的人做牛逼的事情', // 分享描述
-				link: 'http://lobby.xingqiu123.com/gx/web/index.html?timestamp='+new Date().getTime(), // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-				imgUrl: 'https://res.xingqiu123.com/meishijia/share_icon.png', // 分享图标
-				success: function () {
-				  // 设置成功
-				  alert('设置成功')
-				},
-				fail:function(){
-					alert('失败')
-				}
-			}); */
-			wx.onMenuShareTimeline({
-				title: '分享12345', // 分享标题
-			
-				link: 'http://lobby.xingqiu123.com/gx/web/index.html?timestamp='+new Date().getTime(), // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-				imgUrl: 'https://res.xingqiu123.com/meishijia/share_icon.png', // 分享图标
-				
-				success: function () {
-					alert('分享朋友成功')
-				},
-				fail:function(){
-					alert('分享朋友失败')
-				}
-				});
-				wx.onMenuShareQQ({
-					title: '分享朋友', // 分享标题
-					desc: '6666', // 分享描述
-					link: 'http://lobby.xingqiu123.com/gx/web/index.html', // 分享链接
-					imgUrl: 'https://res.xingqiu123.com/meishijia/share_icon.png', // 分享图标
-					success: function () {
-					alert('分享成功')
-					},
-					cancel: function () {
-					// 用户取消分享后执行的回调函数
-					alert('分享失败')
-					}
-					});
-		});
-	}
 	adapterScreen() {
 		var stage = Laya.stage;
 		var screenWidth = Laya.Browser.width;
@@ -117,29 +64,28 @@ class Main {
 				localStorage.setItem('userTokenKey',data['user_token']);
 				PaoYa.RequestConfig.token=data['user_token']
 				PaoYa.DataCenter.loginData = data;
-					//先走登陆流程,登陆成功后loadingWaitView,再initRootScene 异步
-					_this.adapterJS();
+					//先走登陆流程,登陆成功后loadingWaitView,再initRootScene 异步				
 					_this.preload();
 			}
 		} else {
 			var token = localStorage.getItem('userTokenKey');
 			PaoYa.RequestConfig.token = token;
-			//alert('登陆token：'+token);
 			PaoYa.Request.POST('user_login', { user_token: token }, function (res) {
 				PaoYa.DataCenter.loginData = res;
 				//先走登陆流程,登陆成功后loadingWaitView,再initRootScene 异步
-				_this.adapterJS();
 		        _this.preload();
 			}, function (res) {
-				/* alert(res)
-				alert('登录失败,token:'+localStorage.getItem('userTokenKey')); */
+			
 				localStorage.removeItem('userTokenKey');
-				//alert('清空token后:'+localStorage.getItem('userTokenKey'));
 				_this.onConfigLoaded(); 
 			})
     	} 
 		
 	}
+	/* adapter(){
+		this.adapterJS();
+		this.preload();
+	}; */
 	preload(){
 		this.setUpGameRes()
 		Laya.loader.load(PaoYa.DataCenter.GAMERES,Laya.Handler.create(this,()=>{

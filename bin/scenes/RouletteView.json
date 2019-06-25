@@ -1,0 +1,1 @@
+{"type":"Scene","props":{"width":640,"height":1136},"compId":2,"child":[{"type":"Sprite","props":{"y":0,"x":0,"texture":"routtle/tableBg.png"},"compId":4},{"type":"Script","props":{"y":0,"x":0,"runtime":"script/RouletteControl.js"},"compId":3}],"loadList":["routtle/tableBg.png"],"loadList3D":[]}
