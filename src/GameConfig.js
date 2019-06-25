@@ -7,6 +7,7 @@ import GameControl from "./script/GameControl"
 import HomeControl from "./script/HomeControl"
 import LoadingControl from "./script/Loading/LoadingControl"
 import RankView from "./script/RankService/RankView"
+import RankPrizeCell from "./script/RankService/RankPrizeCell"
 import RankControl from "./script/RankService/RankControl"
 import Option from "./script/prefab/Option"
 import Word from "./script/prefab/Word"
@@ -23,6 +24,7 @@ export default class GameConfig {
 		reg("script/HomeControl.js",HomeControl);
 		reg("script/Loading/LoadingControl.js",LoadingControl);
 		reg("script/RankService/RankView.js",RankView);
+		reg("script/RankService/RankPrizeCell.js",RankPrizeCell);
 		reg("script/RankService/RankControl.js",RankControl);
 		reg("script/prefab/Option.js",Option);
 		reg("script/prefab/Word.js",Word);
