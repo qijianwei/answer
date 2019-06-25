@@ -1,8 +1,13 @@
 export default class RankView extends PaoYa.Dialog {
     onAwake(){
         this.configListView()
-        
+        this.initUserInfo();
+        this.configPrizeListView();
         this.changeBtnHandler(0);
+    }
+    initUserInfo(){
+        this.lblIcon.texture=PaoYa.Utils.makeIcon(PaoYa.DataCenter.loginData.icon_big);
+        this.lblName.text=PaoYa.Utils.formatName(PaoYa.DataCenter.loginData.nick);
     }
     configListView(){
         let listView = this.listView;
@@ -10,22 +15,26 @@ export default class RankView extends PaoYa.Dialog {
         listView.renderHandler =  Laya.Handler.create(this,function(cell,index){
             let item = listView.array[index]
             cell.setItem(item)
-           /*  if (index == 0) {
-                cell.lblRank.color = "#ff7e00";
-                cell.lblRank.bold = true;
-            } else if (index == 1 || index == 2){
-                cell.lblRank.color = "#404040";
-                cell.lblRank.bold = true;
-            } else {
-                cell.lblRank.color = "#7c7c7c";
-                cell.lblRank.bold = false;
-            } */
+        
+        },null,false)
+    }
+    configPrizeListView(){
+        let prizeList=this.prizeList;
+        prizeList.vScrollBarSkin='';
+        prizeList.renderHandler =  Laya.Handler.create(this,function(cell,index){
+            let item = prizeList.array[index]
+            cell.setItem(item)
         },null,false)
     }
     reloadData(list){
         this.listView.repeatY = list.length > 7 ? 7:list.length
         this.listView.array = list
         this.listView.refresh()
+    }
+    reloadPrizeData(list){
+        this.prizeList.repeatY = list.length > 5 ? 5:list.length
+        this.prizeList.array = list
+        this.prizeList.refresh()
     }
     //index :0 排行榜 2奖品榜 3 比赛说明
     changeBtnHandler(index){
@@ -42,6 +51,7 @@ export default class RankView extends PaoYa.Dialog {
             this.btnRank.bold=true;
             this.btnIntroduct.bold=false;
             this.btnPrize.bold=false;   
+            this.ImgIntroduct.visible=false;
         } else if(index==2){
             this.boxUserInfo.visible=true;
             this.listView.visible = false;
@@ -54,7 +64,8 @@ export default class RankView extends PaoYa.Dialog {
             this.btnPrize.color="#00000";
             this.btnRank.bold=false;
             this.btnIntroduct.bold=false;
-            this.btnPrize.bold=true;        
+            this.btnPrize.bold=true;   
+            this.ImgIntroduct.visible=false;     
         }else{
             this.boxUserInfo.visible=false;
             this.listView.visible = false;
@@ -69,6 +80,7 @@ export default class RankView extends PaoYa.Dialog {
             this.btnIntroduct.bold=true;
             this.btnPrize.bold=false;
             //只展示比赛说明
+            this.ImgIntroduct.visible=true;     
         }
     }
 }

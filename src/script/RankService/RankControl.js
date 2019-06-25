@@ -6,6 +6,7 @@ export default class RankControl extends PaoYa.Component {
         super.onAwake()
         this.owner.reloadData([])
         this.requestRankList()
+        this.typeText=['','1等奖','2等奖','3等奖','4等奖','5等奖']
     }
     onClick(e) {
         switch (e.target.name) {
@@ -17,10 +18,12 @@ export default class RankControl extends PaoYa.Component {
                 break
             case 'btnPrize':
                 this.owner.changeBtnHandler(2)
+                this.requestPrizeList();
                 break
         }
     }
     requestRankList() {
+        var _this=this;
       PaoYa.Request.GET("rank_list", { }, (res) => {
                 if (!res.user_rank||!res.user_rank.length) { return }
                 let list = []
@@ -34,16 +37,29 @@ export default class RankControl extends PaoYa.Component {
                     list.push(i)
                 });
                 this.owner.reloadData(list)
-             /*    let info = {
-                    name: PaoYa.Utils.formatName(res.member_nick),
-                    icon: PaoYa.Utils.makeIcon(res.member_avstar),
-                    rank: (!res.ranking || (res.ranking <= 0)) ? "未上榜" : ("NO." + res.ranking),
-                    des: res.score_with_unit
-                }
-                this.owner.reloadMyRankViewData(info) */
+                this.owner.lblRankPos.text=res.rank;
             }, () => {
 
             })
         }
+    requestPrizeList(){
+        PaoYa.Request.GET("reward_list",{},(res)=>{
+            console.log(res)
+            console.log(this.getLocalTime(res[0].createDate))
+            let list=[];
+            res.forEach((item,index)=>{
+                let i={
+                    name:this.typeText[item.awardType],
+                    des:this.getLocalTime(item.createDate*1000)
+                }
+                list.push(i);
+            })
+           this.owner.reloadPrizeData(list);
+        })
+    }
+    getLocalTime(time) {     
+        var date = new Date(time + 8 * 3600 * 1000);
+        return date.toJSON().substr(0, 10);
+     }
    
 }
