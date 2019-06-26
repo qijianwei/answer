@@ -23,7 +23,7 @@ P E56040F3 btn_start.png
 R F8D3FB8B homeBg.png
 P 92376645 icon.png
 P E37EA72F lblText.png
-P E9A5B461 qrcode_for_gh_2d8225c4a867_258.jpg
+R E9A5B461 qrcode.jpg
 P DF335311 shadow.png
 P 6170214D showBg.png
 P D4FD14B3 textCircle.png
@@ -41,6 +41,11 @@ D result
 P 0E1BEB2A avstarBg.png
 R 6632B4C3 bg.png
 P FA1F9A79 btn.png
+P FBF3CD61 btn_post.png
+P 13ED39DC kuang.png
+P A7E14505 rewardBg.png
+P ED5588DA text1.png
+P 1CC6F044 text3.png
 P E6C0F3B4 title.png
 P A7FE5F0B titleBg.png
 D routtle

@@ -61,22 +61,19 @@ export default class HomeControl extends PaoYa.Component {
                 break;
             case 'actIcon':
                 //console.log("展开排行榜");
-               // this.navigator.popup('/RankView');
-               wx.scanQRCode({
-                needResult : 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
-                scanType : [ "qrCode"], // 可以指定扫二维码还是一维码，默认二者都有
-                success : function(res) {
-                    alert('成功')
-                    var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
-                    window.location.href = result;//因为我这边是扫描后有个链接，然后跳转到该页面
-                },
-                error : function(){
-                   alert('失败')
-                }
-            });
-
+                this.navigator.popup('/RankView');
+              // this.navigator.popup('RewardDialog',{type:'hah'});
                 break;
         }
+    }
+    //扫描二维码相关
+    qrcode(){
+        var img=document.createElement("img");
+        img.style.position ="absolute";
+        img.src="home/qrcode.jpg";
+        img.index=999999;
+        document.body.appendChild(img);
+        Laya.Utils.fitDOMElementInArea(img,this.owner.imgQr,0,0,this.owner.imgQr.width,this.owner.imgQr);
     }
     onAppear() {
         if (!this.timeLine) { this.timeLine = new Laya.TimeLine() }

@@ -1,0 +1,44 @@
+export default class RewardControl extends PaoYa.Component{
+    constructor(){
+        super();
+    }
+    onAwake(){
+        this.typeArr=["","一等奖","二等奖","三等奖","四等奖","五等奖"];
+        console.log(this.owner.params); 
+        if(this.owner.params){
+            this.owner.lblReward.text=this.typeArr[this.owner.params.rewardType];
+        }     
+    }
+    onEnable(){
+        this.lblName=this.owner.lblName;
+        this.lblAddress=this.owner.lblAddress;
+        this.lblMobile=this.owner.lblMobile;
+    }
+    onClick(e){
+        switch(e.target.name){
+            case 'btnPost':
+               //console.log('点击提交资料')
+               this.checkRule();
+               this.POST('submit_user_info',{
+                   "mobile":Number(this.lblMobile.text),
+                   "card_name":this.lblName.text,
+                   "address":this.lblAddress.text
+                },()=>{
+                    this.owner.close();
+                })
+            break;
+        }
+    }
+    checkRule(){
+        var isPhone=/^((\+?86)|(\(\+86\)))?(13[012356789][0-9]{8}|15[012356789][0-9]{8}|18[02356789][0-9]{8}|147[0-9]{8}|1349[0-9]{7})$/;
+        if(!isPhone.test(Number(this.lblMobile.text))){
+            alert('请输入正确电话号码');
+        }
+        if(!this.lblName.text){
+            alert('名字不能为空');
+        }
+        if(!this.lblAddress.text){
+            alert('地址不能为空');
+        }
+    }
+}

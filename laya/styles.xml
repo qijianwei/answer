@@ -10,4 +10,6 @@
    <item name="rank/introduct.png" type="Image" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
    <item name="routtle/circle2.png" type="Image" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
    <item name="routtle/circle1.png" type="Image" compress="0" pack="0" quality="80" props="" picType="0" scale="0"/>
+   <item name="home/qrcode.jpg" type="Sprite" compress="0" pack="2" quality="80" props="" picType="0" scale="0"/>
+   <item name="result/rewardBg.png" type="Sprite" compress="0" pack="1" quality="80" props="" picType="0" scale="0"/>
 </res>

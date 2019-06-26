@@ -146,10 +146,10 @@
         {
             "x":15,
             "type":"Sprite",
-            "searchKey":"Sprite",
-            "props":{"y":602,"x":190.5,"texture":"home/qrcode_for_gh_2d8225c4a867_258.jpg"},
+            "searchKey":"Sprite,imgQr",
+            "props":{"y":602,"x":190.5,"var":"imgQr","texture":"home/qrcode.jpg"},
             "nodeParent":2,
-            "label":"Sprite",
+            "label":"imgQr",
             "isDirectory":false,
             "isAniNode":true,
             "hasChild":false,
