@@ -28,6 +28,8 @@ export default class GameControl extends PaoYa.Component {
     onEnable() {
         var _this=this;   
         this.questions=this.params.question;
+        this.awardRest=this.params.game_rest_num;
+        PaoYa.DataCenter.awardRest=this.awardRest;
 
         this.okNum=this.owner.okNum;//答对题数对象
         this.idiomBox=this.owner.idiomBox;

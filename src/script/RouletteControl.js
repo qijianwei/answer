@@ -9,6 +9,9 @@ export default class RouletteControl extends PaoYa.Component {
         this.rewardTypeArrs=[[],[0],[3,7],[2,5],[4,6],[1]];
         this.rotateIndex=1;
     }
+    onEnable(){
+        this.owner.lblTip.text='您还有'+PaoYa.DataCenter.awardRest+'次抽奖机会';
+    }
     onClick(e) {
         switch (e.target.name) {
             case 'btnPrize':

@@ -29,8 +29,11 @@ export default class ResultControl extends PaoYa.Component {
         // PaoYa.navigator.push('GameScene');
         break;
       case "btnPrize":
-        this.navigator.push('RouletteView');
-        //console.log("展开排行榜");
+        if(PaoYa.DataCenter.awardRest&&this.params.score>=80){
+          this.navigator.push('RouletteView');
+        }else{
+          console.log('没有抽奖机会');
+        } 
         break;
       case "btnShare":
         console.log("分享功能");
