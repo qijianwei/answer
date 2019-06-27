@@ -23,7 +23,6 @@ P E56040F3 btn_start.png
 R F8D3FB8B homeBg.png
 P 92376645 icon.png
 P E37EA72F lblText.png
-R E9A5B461 qrcode.jpg
 P DF335311 shadow.png
 P 6170214D showBg.png
 P D4FD14B3 textCircle.png
@@ -31,17 +30,20 @@ P FF23FFCE textIcon.png
 D local
 D rank
 P 654FEADE avstar.png
+P 34443C08 btn_close.png
 R EE6A3736 center-empty-mask.jpg
-P 34443C08 close.png
 R AE82EFE6 introduct.png
+R 85F90A95 qrBg.jpg
+R 50AEBC31 qrCode.jpg
 R 1166EF31 rankBg.png
-R 01DD66EE rankTitle.jpg
+P 01DD66EE rankTitle.jpg
 P 7E6D6B87 textBg.png
 D result
 P 0E1BEB2A avstarBg.png
 R 6632B4C3 bg.png
 P FA1F9A79 btn.png
 P FBF3CD61 btn_post.png
+P B3AC338E gift.png
 P 13ED39DC kuang.png
 P A7E14505 rewardBg.png
 P ED5588DA text1.png
@@ -50,9 +52,10 @@ P E6C0F3B4 title.png
 P A7FE5F0B titleBg.png
 D routtle
 P 0D7D7DFA btn.png
+P 923E478A btn_back.png
 P BFA38B71 btnLucky.png
-R DE49D565 circle1.png
-R B8B9D4A7 circle2.png
+P DE49D565 circle1.png
+P B8B9D4A7 circle2.png
 P 4622B50B icon.png
 P 0FEF0DFC table.png
 R 57C10663 tableBg.png

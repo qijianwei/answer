@@ -26,7 +26,9 @@ export default class RouletteControl extends PaoYa.Component {
                     this.rewardType=res.awardType;
                     this.hasUserInfo=res.has_sumit_info;
                     this.startRoulette();
-                })    
+                })   
+            case 'btnBack':
+                this.navigator.pop(); 
                 break;
         }
     }
@@ -39,8 +41,12 @@ export default class RouletteControl extends PaoYa.Component {
             rotation: 360 - 45 * index + 360 * 4
         }, 5000, Laya.Ease.circOut, Laya.Handler.create(this, ()=> {
              _this.stopBling();
-             if(_this.rewardType!=5&&!this.hasUserInfo){
-                 _this.navigator.popup('RewardDialog',{rewardType:_this.rewardType})
+             if(_this.rewardType!=5){
+                 if(!this.hasUserInfo){
+                    _this.navigator.popup('RewardDialog',{rewardType:_this.rewardType}) 
+                 }else{
+                    _this.navigator.popup('RewardOneDialog',{rewardType:_this.rewardType})  
+                 }
              }
         }));
 

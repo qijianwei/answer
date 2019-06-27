@@ -1,0 +1,1 @@
+{"type":"Dialog","props":{"width":578,"runtime":"script/Dialog/QrDialog.js","isModal":true,"height":789},"compId":2,"child":[{"type":"Sprite","props":{"y":0,"x":0,"texture":"rank/qrBg.jpg"},"compId":3},{"type":"Image","props":{"y":90,"x":132,"var":"imgQr","skin":"rank/qrCode.jpg"},"compId":6}],"loadList":["rank/qrBg.jpg","rank/qrCode.jpg"],"loadList3D":[]}

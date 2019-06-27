@@ -2,11 +2,11 @@
     "x":0,
     "type":"Scene",
     "selectedBox":2,
-    "selecteID":12,
+    "selecteID":15,
     "searchKey":"Scene",
     "props":{"width":640,"sceneColor":"#000000","height":1136},
     "nodeParent":-1,
-    "maxID":13,
+    "maxID":16,
     "label":"Scene",
     "isOpen":true,
     "isDirectory":true,
@@ -25,6 +25,35 @@
             "isAniNode":true,
             "hasChild":false,
             "compId":4,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Image",
+            "searchKey":"Image",
+            "props":{"y":52,"x":34,"skin":"routtle/btn_back.png"},
+            "nodeParent":2,
+            "label":"Image",
+            "isOpen":true,
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":14,
+            "child":[
+                ]
+        },
+        {
+            "x":15,
+            "type":"Button",
+            "searchKey":"Button,btnBack",
+            "props":{"y":26,"x":0,"width":138,"skin":"comp/button.png","name":"btnBack","height":79},
+            "nodeParent":2,
+            "label":"btnBack",
+            "isDirectory":false,
+            "isAniNode":true,
+            "hasChild":false,
+            "compId":15,
             "child":[
                 ]
         },

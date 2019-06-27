@@ -201,7 +201,7 @@ export default class GameControl extends PaoYa.Component {
     //选择题
     initOption(){
       this.optionBox.width=465;
-      for(var i=0;i<3;i++){
+      for(var i=0;i<4;i++){
           var option=Laya.Pool.getItemByCreateFun('option',this.option.create,this.option);
           this.optionBox.addChild(option);
           option.pos(0,i*100);       

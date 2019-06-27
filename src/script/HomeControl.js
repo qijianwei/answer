@@ -60,21 +60,11 @@ export default class HomeControl extends PaoYa.Component {
                    
                 break;
             case 'actIcon':
-                //console.log("展开排行榜");
-                this.navigator.popup('/RankView');
-              // this.navigator.popup('RewardDialog',{type:'hah'});
+                this.navigator.popup('/RankView',{type:0});
                 break;
         }
     }
-    //扫描二维码相关
-    qrcode(){
-        var img=document.createElement("img");
-        img.style.position ="absolute";
-        img.src="home/qrcode.jpg";
-        img.index=999999;
-        document.body.appendChild(img);
-        Laya.Utils.fitDOMElementInArea(img,this.owner.imgQr,0,0,this.owner.imgQr.width,this.owner.imgQr);
-    }
+   
     onAppear() {
         if (!this.timeLine) { this.timeLine = new Laya.TimeLine() }
         this.breathEffect();
