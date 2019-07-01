@@ -8,6 +8,7 @@ export default class ResultView extends PaoYa.View {
     }
     onEnable(){
         this.initUserView();
+        this.lblTip.text=`【答题${PaoYa.DataCenter.loginData.award_score}分以上可抽奖一次】`;
     }
     initUserView(){
         this.userName.text=PaoYa.Utils.formatName(PaoYa.DataCenter.loginData.nick);

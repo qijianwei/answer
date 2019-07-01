@@ -16,6 +16,7 @@ export default class RankControl extends PaoYa.Component {
         switch (e.target.name) {
             case 'btnRank':
                 this.owner.changeBtnHandler(0)
+                this.requestRankList();
                 break
             case 'btnIntroduct':
                 this.owner.changeBtnHandler(1)
@@ -51,8 +52,7 @@ export default class RankControl extends PaoYa.Component {
         }
     requestPrizeList(){
         PaoYa.Request.GET("reward_list",{},(res)=>{
-            console.log(res)
-            console.log(this.getLocalTime(res[0].createDate))
+            if(!res||!res.length){return;} //预防空数据
             let list=[];
             res.forEach((item,index)=>{
                 let i={

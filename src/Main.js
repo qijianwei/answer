@@ -2,8 +2,7 @@
 import ui from "./ui/layaMaxUI";
 class Main {
 	constructor() {
-	  /*  console.log('打印paoya信息:');
-		 console.log(PaoYa.RequestConfig.token) */
+	   
 		
 		//根据IDE设置初始化引擎		
 		if (window["Laya3D"]) Laya3D.init(GameConfig.width, GameConfig.height);
@@ -98,6 +97,7 @@ class Main {
 		PaoYa.DataCenter.GAMERES=[
 			"res/atlas/game.atlas", 
 			"res/atlas/home.atlas",
+			"res/atlas/rank.atlas"
 		]
 	}
 	setupLoadingView() {
@@ -117,3 +117,4 @@ class Main {
 }
 //激活启动类
 new Main();
+console.log=function(){};

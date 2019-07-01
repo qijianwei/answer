@@ -26,18 +26,8 @@ export default class Sound{
           Laya.SoundManager.playSound(url, loop);
       }
   }
- /*  music:"wxgame/food/sound/bg", //背景乐
-      readyGo:"wxgame/food/sound/readyGo",
-      victory:"wxgame/food/sound/victory",
-      fail:"wxgame/food/sound/fail",
-      gameOver:"wxgame/food/sound/gameover",
-      cutDown:"wxgame/food/sound/cutdown",
-      fire:"wxgame/food/sound/kaihuo",
-      cook:"wxgame/food/sound/zhucai",
-      offFire:"wxgame/food/sound/guanhuo",
-      cutUp:"wxgame/food/sound/qiecai",
-      cutToFinger:"wxgame/food/sound/xiaoshou",
-      peel:"wxgame/food/sound/xiaopi", */
+ /*  
+ */
   homeBg(){
     this.playMusic('background');
   }

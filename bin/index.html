@@ -31,6 +31,15 @@
         }
     </script>
     <script type="text/javascript" src="index.js"></script>
+    <audio controls="controls" autoplay="autoplay" id="mp3Btn" style="display: none;">
+        <source src="http://pt6kien6m.bkt.clouddn.com/sound/background.mp3" type="audio/mp3" />
+    </audio>
+    <script type="text/javascript">
+        document.addEventListener("WeixinJSBridgeReady", function () { 
+            document.getElementById('mp3Btn').play(); 
+            // document.getElementById('video').play(); 
+        }, false);
+    </script>
 </body>
 
 </html>

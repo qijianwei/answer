@@ -204,7 +204,7 @@ export default class GameControl extends PaoYa.Component {
       for(var i=0;i<4;i++){
           var option=Laya.Pool.getItemByCreateFun('option',this.option.create,this.option);
           this.optionBox.addChild(option);
-          option.pos(0,i*100);       
+         // option.pos(0,i*100);       
           option.visible=false;
           this.options.push(option);
       }
@@ -286,6 +286,7 @@ export default class GameControl extends PaoYa.Component {
         console.log('最后userToken是:',PaoYa.RequestConfig.token)
         this.POST('submit_credits',{score:this.correctNum*10},(res)=>{
             //console.log('服务端返回的东西')
+            PaoYa.DataCenter.loginData.history_score=res.history_score;
             PaoYa.navigator.present('GameResultView',res);
             PaoYa.LaunchScreenView.hide();
         })

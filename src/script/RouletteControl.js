@@ -8,25 +8,50 @@ export default class RouletteControl extends PaoYa.Component {
     onAwake(){
         this.rewardTypeArrs=[[],[0],[3,7],[2,5],[4,6],[1]];
         this.rotateIndex=1;
+        this.params=this.owner.params;
+    }
+    onAppear(){
+        Laya.stage.scaleMode =Laya.Stage.SCALE_FIXED_WIDTH;
+        Laya.stage.alignV = Laya.Stage.ALIGN_TOP; 
+        this.blingbling();
+    }
+    onDisappear(){
+        Laya.stage.scaleMode =Laya.Stage.EXACTFIT;
+		Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
     }
     onEnable(){
-        this.owner.lblTip.text='您还有'+PaoYa.DataCenter.awardRest+'次抽奖机会';
+       this.iniView();
+    }
+    onDestroy(){
+        Laya.stage.scaleMode =Laya.Stage.EXACTFIT;
+        Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;
+    }
+    iniView(){
+        if(PaoYa.DataCenter.awardRest&&this.params.score>=PaoYa.DataCenter.loginData.award_score){
+            this.owner.lblTip.text='您还有'+PaoYa.DataCenter.awardRest+'次抽奖机会';
+        }else{
+            this.owner.btnStart.disabled=true;
+            this.owner.lblTip.text='您还有0次抽奖机会';
+        }  
     }
     onClick(e) {
         switch (e.target.name) {
             case 'btnPrize':
                 //展示我的奖品
                 this.navigator.popToRootScene();
-                this.navigator.popup('/RankView',{type:1})
+                this.navigator.popup('/RankView',{type:1}) 
                 break
             case 'btnStart':
-                this.POST('draw_lucky',{},(res)=>{
-                    console.log("返回数据",res);
-                    this.rotateIndex=this.rewardTypeArrs[res.awardType].randomItem;
-                    this.rewardType=res.awardType;
+           console.log(this.imgRound)
+            PaoYa.Request.POST('draw_lucky',{},(res)=>{
+                    PaoYa.DataCenter.awardRest=PaoYa.DataCenter.awardRest-1;
+                    this.iniView();
+                    this.rotateIndex=this.rewardTypeArrs[Number(res.awardType)].randomItem;
+                    this.rewardType=Number(res.awardType);
                     this.hasUserInfo=res.has_sumit_info;
                     this.startRoulette();
-                })   
+                })  
+                break; 
             case 'btnBack':
                 this.navigator.pop(); 
                 break;
@@ -36,16 +61,16 @@ export default class RouletteControl extends PaoYa.Component {
         var _this=this;
         var index=this.rotateIndex;
         this.rouletteView.rotation = 0;
-        this.blingbling();
+      //  this.blingbling();
         Laya.Tween.to(this.rouletteView, {
             rotation: 360 - 45 * index + 360 * 4
         }, 5000, Laya.Ease.circOut, Laya.Handler.create(this, ()=> {
              _this.stopBling();
              if(_this.rewardType!=5){
                  if(!this.hasUserInfo){
-                    _this.navigator.popup('RewardDialog',{rewardType:_this.rewardType}) 
+                    _this.navigator.popup('rewardDialog',{rewardType:_this.rewardType}) 
                  }else{
-                    _this.navigator.popup('RewardOneDialog',{rewardType:_this.rewardType})  
+                    _this.navigator.popup('rewardOneDialog',{rewardType:_this.rewardType})  
                  }
              }
         }));

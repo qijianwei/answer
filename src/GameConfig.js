@@ -12,6 +12,7 @@ import LoadingControl from "./script/Loading/LoadingControl"
 import RankView from "./script/RankService/RankView"
 import RankPrizeCell from "./script/RankService/RankPrizeCell"
 import RankControl from "./script/RankService/RankControl"
+import RouletteView from "./script/RouletteView"
 import RouletteControl from "./script/RouletteControl"
 import Option from "./script/prefab/Option"
 import Word from "./script/prefab/Word"
@@ -33,6 +34,7 @@ export default class GameConfig {
 		reg("script/RankService/RankView.js",RankView);
 		reg("script/RankService/RankPrizeCell.js",RankPrizeCell);
 		reg("script/RankService/RankControl.js",RankControl);
+		reg("script/RouletteView.js",RouletteView);
 		reg("script/RouletteControl.js",RouletteControl);
 		reg("script/prefab/Option.js",Option);
 		reg("script/prefab/Word.js",Word);
@@ -44,7 +46,7 @@ GameConfig.scaleMode ="fixedwidth";
 GameConfig.screenMode = "none";
 GameConfig.alignV = "middle";
 GameConfig.alignH = "center";
-GameConfig.startScene = "scenes/dialog/QrDialog.scene";
+GameConfig.startScene = "scenes/GameScene.scene";
 GameConfig.sceneRoot = "";
 GameConfig.debug = false;
 GameConfig.stat = false;
